@@ -2,7 +2,6 @@
 import React from "react";
 import { merge, random, range } from "lodash";
 import {VictoryScatter, VictoryChart} from "../../src/index";
-import {VictoryLabel} from "victory-core";
 import bubbleData from "./bubble-data.js";
 import symbolData from "./symbol-data.js";
 import { VictoryContainer, VictoryTheme, VictoryTooltip } from "victory-core";
@@ -143,7 +142,7 @@ export default class App extends React.Component {
           width={500}
           height={500}
           padding={50}
-          labelComponent={<VictoryTooltip active={true}/>}
+          labelComponent={<VictoryTooltip active/>}
           data={symbolData}
         />
 

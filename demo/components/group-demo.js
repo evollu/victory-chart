@@ -3,7 +3,7 @@ import {
   VictoryChart, VictoryStack, VictoryBar, VictoryLine, VictoryArea,
   VictoryGroup, VictoryScatter, VictoryErrorBar, VictoryVoronoiTooltip
 } from "../../src/index";
-import { RenderInPortal } from "victory-core";
+import { VictoryPortal } from "victory-core";
 import { range, random } from "lodash";
 
 
@@ -118,11 +118,11 @@ class App extends React.Component {
                 ]}
               >
                 <VictoryArea/>
-                <RenderInPortal>
+                <VictoryPortal>
                   <VictoryScatter
                     style={{data: {fill: "orange"}}} size={5}
                   />
-                </RenderInPortal>
+                </VictoryPortal>
               </VictoryGroup>
               <VictoryGroup
                 data={[
@@ -132,11 +132,11 @@ class App extends React.Component {
                 ]}
               >
                 <VictoryArea/>
-                <RenderInPortal>
+                <VictoryPortal>
                   <VictoryScatter
                     style={{data: {fill: "orange"}}} size={5}
                   />
-                </RenderInPortal>
+                </VictoryPortal>
               </VictoryGroup>
               <VictoryGroup
                 data={[
@@ -146,11 +146,11 @@ class App extends React.Component {
                 ]}
               >
                 <VictoryArea/>
-                <RenderInPortal>
+                <VictoryPortal>
                   <VictoryScatter
                     style={{data: {fill: "orange"}}} size={5}
                   />
-                </RenderInPortal>
+                </VictoryPortal>
               </VictoryGroup>
             </VictoryStack>
           </VictoryChart>

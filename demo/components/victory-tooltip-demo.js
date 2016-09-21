@@ -31,7 +31,7 @@ class App extends React.Component {
                   flyoutStyle={{stroke: "red"}}
                   cornerRadius={0}
                   pointerLength={20}
-                  active={true}
+                  active
                 />
               }
               labels={(d) => `hello #${d.x}`}
@@ -47,7 +47,7 @@ class App extends React.Component {
 
           <VictoryScatter
             style={{parent: parentStyle}}
-            labelComponent={<VictoryTooltip active={true}/>}
+            labelComponent={<VictoryTooltip/>}
             labels={(d) => `hello #${d.x}`}
             data={[
               {x: 1, y: 1},
