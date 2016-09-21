@@ -21,28 +21,33 @@ class App extends React.Component {
     return (
       <div className="demo">
         <div style={containerStyle}>
-          <VictoryBar
-            style={{parent: parentStyle}}
-            labelComponent={
-              <VictoryTooltip
-                flyoutStyle={{stroke: "red"}}
-                cornerRadius={0}
-                pointerLength={20}
-              />
-            }
-            labels={(d) => `hello #${d.x}`}
-            data={[
-              {x: 1, y: 1},
-              {x: 2, y: 2},
-              {x: 3, y: 3},
-              {x: 4, y: 2},
-              {x: 5, y: 1}
-            ]}
-          />
+          <svg width={300} height={300}>
+            <VictoryBar
+              width={300} height={300}
+              standalone={false}
+              style={{parent: parentStyle}}
+              labelComponent={
+                <VictoryTooltip
+                  flyoutStyle={{stroke: "red"}}
+                  cornerRadius={0}
+                  pointerLength={20}
+                  active={true}
+                />
+              }
+              labels={(d) => `hello #${d.x}`}
+              data={[
+                {x: 1, y: 1},
+                {x: 2, y: 2},
+                {x: 3, y: 3},
+                {x: 4, y: 2},
+                {x: 5, y: 1}
+              ]}
+            />
+          </svg>
 
           <VictoryScatter
             style={{parent: parentStyle}}
-            labelComponent={<VictoryTooltip/>}
+            labelComponent={<VictoryTooltip active={true}/>}
             labels={(d) => `hello #${d.x}`}
             data={[
               {x: 1, y: 1},

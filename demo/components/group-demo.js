@@ -1,8 +1,9 @@
 import React from "react";
 import {
-  VictoryChart, VictoryStack, VictoryBar, VictoryLine,
+  VictoryChart, VictoryStack, VictoryBar, VictoryLine, VictoryArea,
   VictoryGroup, VictoryScatter, VictoryErrorBar, VictoryVoronoiTooltip
 } from "../../src/index";
+import { RenderInPortal } from "victory-core";
 import { range, random } from "lodash";
 
 
@@ -105,6 +106,54 @@ class App extends React.Component {
               </VictoryGroup>
             </VictoryStack>
           </VictoryChart>
+          <VictoryChart style={chartStyle}>
+            <VictoryStack
+              colorScale="qualitative"
+            >
+              <VictoryGroup
+                data={[
+                  {x: 1, y: 3},
+                  {x: 2, y: 4},
+                  {x: 3, y: 2}
+                ]}
+              >
+                <VictoryArea/>
+                <RenderInPortal>
+                  <VictoryScatter
+                    style={{data: {fill: "orange"}}} size={5}
+                  />
+                </RenderInPortal>
+              </VictoryGroup>
+              <VictoryGroup
+                data={[
+                  {x: 1, y: 4},
+                  {x: 2, y: 5},
+                  {x: 3, y: 1}
+                ]}
+              >
+                <VictoryArea/>
+                <RenderInPortal>
+                  <VictoryScatter
+                    style={{data: {fill: "orange"}}} size={5}
+                  />
+                </RenderInPortal>
+              </VictoryGroup>
+              <VictoryGroup
+                data={[
+                  {x: 1, y: 3},
+                  {x: 2, y: 2},
+                  {x: 3, y: 5}
+                ]}
+              >
+                <VictoryArea/>
+                <RenderInPortal>
+                  <VictoryScatter
+                    style={{data: {fill: "orange"}}} size={5}
+                  />
+                </RenderInPortal>
+              </VictoryGroup>
+            </VictoryStack>
+          </VictoryChart>
 
           <VictoryChart style={chartStyle}>
             <VictoryGroup
@@ -140,7 +189,7 @@ class App extends React.Component {
               ]}
             >
               <VictoryLine/>
-              <VictoryVoronoiTooltip/>
+              <VictoryVoronoiTooltip style={{flyout: {stroke: "blue"}}}/>
             </VictoryGroup>
           </VictoryChart>
 
